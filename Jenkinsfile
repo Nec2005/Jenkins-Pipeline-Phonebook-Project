@@ -8,7 +8,7 @@ pipeline {
         AWS_REGION = "us-east-1"
         AWS_ACCOUNT_ID=sh(script:'export PATH="$PATH:/usr/local/bin" && aws sts get-caller-identity --query Account --output text', returnStdout:true).trim()
         ECR_REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
-        APP_REPO_NAME = "nec-project/phonebook-app"
+        APP_REPO_NAME = "nec-repo/phonebook-app"
         APP_NAME = "phonebook"
         CFN_KEYPAIR= "firstkey"
         HOME_FOLDER = "/home/ec2-user"
@@ -139,14 +139,3 @@ pipeline {
     }
 
 }
-
-
-stageler:
-- Create ECR Repo
-- Build App Docker Image
-- Push Image to ECR Repo
-- Create Infrastructure for the App
-- Test the Infrastructure
-- Deploy App on Docker Swarm
-- Destroy the infrastructure
-* post 
