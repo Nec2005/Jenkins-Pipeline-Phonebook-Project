@@ -17,7 +17,7 @@ services:
       - appnet
 
   app-server:
-    image: 171553702746.dkr.ecr.us-east-1.amazonaws.com/Nec-project/phonebook-app:latest
+    image: 171553702746.dkr.ecr.us-east-1.amazonaws.com/nec-project/phonebook-app:latest
     deploy:
       mode: global
       update_config:
